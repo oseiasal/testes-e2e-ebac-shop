@@ -1,0 +1,23 @@
+[
+    {
+        "nome": "Ingrid Running Jacket",
+        "size": "M",
+        "color": "Red"
+    },
+     {
+        "nome": "Augusta Pullover Jacket",
+         "size": "M",
+        "color": "Orange"
+    },
+    {
+        "nome": "Eos V-Neck Hoodie",
+         "size": "M",
+        "color": "Blue"
+    },
+    {
+        "nome": "Helena Hooded Fleece",
+         "size": "S",
+        "color": "Yellow"
+    }
+   
+]
