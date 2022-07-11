@@ -10,10 +10,6 @@ class ProductToCart {
         cy.get('.single_add_to_cart_button').click()
     }
 
-    checkCartLength(cartLength) {
-        cy.get('.dropdown-toggle > .mini-cart-items').contains(cartLength)
-    }
-
     goToCheckOut({ firstName, lastName, address, cityName, country, state, postcode, phone, email }) {
         cy.get('.woocommerce-message > .button').click()
         cy.get('.checkout-button').click()

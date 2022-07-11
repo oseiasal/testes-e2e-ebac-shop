@@ -20,8 +20,6 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
                     ProductToCart.addProduct({ nome: produto.nome, color: produto.color, size: produto.size })
                 })
 
-                ProductToCart.checkCartLength(4)
-
                 ProductToCart.goToCheckOut({
                     firstName,
                     lastName,
