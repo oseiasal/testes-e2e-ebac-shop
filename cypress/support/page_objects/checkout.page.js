@@ -35,4 +35,4 @@ class Checkout {
 
 }
 
-export default new ProductToCart()
+export default new Checkout()
