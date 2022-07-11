@@ -14,16 +14,14 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
     const phone = faker.phone.number('+55 11 9####-####')
     const email = `${firstName}.${lastName}@gmail.com`
 
-    it('Adicionar produtos ao carrinho', () => {
+    it('Adicionar produtos ao carrinho e fazer checkout', () => {
         cy.fixture('produtos')
             .then((produtos) => {
                 produtos.map((produto) => {
                     ProductToCart.addProduct({ nome: produto.nome, color: produto.color, size: produto.size })
                 })
             })
-    });
 
-    it('Fazer checkout', () => {
         Checkout.goToCheckOut({
             firstName,
             lastName,

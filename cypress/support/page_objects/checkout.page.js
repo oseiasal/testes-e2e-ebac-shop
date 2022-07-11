@@ -1,15 +1,5 @@
 class Checkout {
 
-    addProduct({ nome, size, color }) {
-        cy.visit('/')
-        cy.get('[class="product-block grid"]').contains(nome).click()
-        cy.get('.single_add_to_cart_button').click()
-
-        cy.get('.button-variable-item-' + size).click()
-        cy.get('.button-variable-item-' + color).click()
-        cy.get('.single_add_to_cart_button').click()
-    }
-
     goToCheckOut({ firstName, lastName, address, cityName, country, state, postcode, phone, email }) {
         cy.get('.woocommerce-message > .button').click()
         cy.get('.checkout-button').click()
