@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 import { faker } from '@faker-js/faker';
-import ProductToCart from '../support/page_objects/ProductToCart.page'
+import ProductToCart from '../support/page_objects/product-to-cart.page'
+import Checkout from '../support/page_objects/checkout.page'
 
 context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
     const firstName = faker.name.firstName();
@@ -13,25 +14,27 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
     const phone = faker.phone.number('+55 11 9####-####')
     const email = `${firstName}.${lastName}@gmail.com`
 
-    it('Adicionar produtos ao carrinho e fazer checkout', () => {
+    it('Adicionar produtos ao carrinho', () => {
         cy.fixture('produtos')
             .then((produtos) => {
                 produtos.map((produto) => {
                     ProductToCart.addProduct({ nome: produto.nome, color: produto.color, size: produto.size })
                 })
-
-                ProductToCart.goToCheckOut({
-                    firstName,
-                    lastName,
-                    address,
-                    cityName,
-                    country,
-                    state,
-                    postcode,
-                    phone,
-                    email
-                })
-
             })
     });
+
+    it('Fazer checkout', () => {
+        Checkout.goToCheckOut({
+            firstName,
+            lastName,
+            address,
+            cityName,
+            country,
+            state,
+            postcode,
+            phone,
+            email
+        })
+    });
+
 })

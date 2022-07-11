@@ -1,4 +1,4 @@
-class ProductToCart {
+class Checkout {
 
     addProduct({ nome, size, color }) {
         cy.visit('/')
