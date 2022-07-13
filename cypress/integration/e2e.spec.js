@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 import { faker } from '@faker-js/faker';
-import ProductToCart from '../support/page_objects/product-to-cart.page'
 import Checkout from '../support/page_objects/checkout.page'
 
 context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
@@ -18,7 +17,7 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         cy.fixture('produtos')
             .then((produtos) => {
                 produtos.map((produto) => {
-                    ProductToCart.addProduct({ nome: produto.nome, color: produto.color, size: produto.size })
+                    cy.addProduct({ nome: produto.nome, color: produto.color, size: produto.size })
                 })
             })
 
@@ -33,6 +32,8 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
             phone,
             email
         })
+
+        cy.get('.page-title').should('contain', 'Pedido recebido')
     });
 
 })

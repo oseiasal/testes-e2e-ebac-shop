@@ -20,7 +20,7 @@ class Checkout {
         cy.get('.woocommerce-terms-and-conditions-checkbox-text').click()
 
         cy.get('#place_order').click()
-        cy.get('.page-title').should('contain', 'Pedido recebido')
+
     }
 
 }
